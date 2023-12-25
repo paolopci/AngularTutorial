@@ -28,6 +28,27 @@
        [class.bg-info]="(model.getProduct(2)?.price??0)>=50">
     The second product is {{ model.getProduct(2)?.name }}
   </div>
+  <div [ngClass]="getClassMap(1)">The first product is {{ model.getProduct(1)?.name ?? 'None' }}</div>
+  <div [ngClass]="getClassMap(2)">The first product is {{ model.getProduct(2)?.name ?? 'None' }}</div>
+  <div class="text-white">
+    <div class="p-2 bg-warning">
+      the <span [style.font-size]="FontSizeWithUnits">First Product</span>
+    </div>
+    <div class="p-2 bg-light text-center">
+      the <span [style.font-size.px]="FontSizeWithOutUnits" style="color: black">Second Product</span>
+    </div>
+
+    <div class="p-2 bg-light text-center">
+      the <span [ngStyle]="getStyles(3)">The Product name is {{ model.getProduct(3)?.name }}</span>
+    </div>
+  </div>
+
+  <div class="text-white">
+    <div [ngClass]="getClassesByPosition(0)">
+      The first product is {{ getProductByPosition(0).name }}
+    </div>
+  </div>
+
 </div>
 
 
