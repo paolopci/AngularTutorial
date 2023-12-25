@@ -1,10 +1,18 @@
-import { Component } from "@angular/core";
-import { Model } from "./repository.model";
+import {Component} from "@angular/core";
+import {Model} from "./repository.model";
 
 @Component({
-    selector: "app",
-    templateUrl: './template.html'
+  selector: "app",
+  templateUrl: './template.html'
 })
 export class ProductComponent {
-    model: Model = new Model();
+  model: Model = new Model();
+
+  getClasses(key: number): string {
+    let product = this.model.getProduct(key);
+
+    return "p-2 " + ((product?.price ?? 0) < 50 ? "bg-info" : "bg-warning");
+
+    //return this.model.getProducts().length == 5 ? "bg-success" : "bg-warning";
+  }
 }
