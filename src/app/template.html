@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
   <div [ngClass]="'text-white p-2 ' + getClasses(4)">
     Hello, World.
   </div>
@@ -24,6 +24,7 @@
       </td>
     </tr>
   </table>
+  <ng-template [ngTemplateOutlet]="titleTemplate" [ngTemplateOutletContext]="{Titolo: 'Paolo Paci 1'}"></ng-template>
   <div class="p-2 " [class.bg-success]="(model.getProduct(2)?.price??0)<50"
        [class.bg-info]="(model.getProduct(2)?.price??0)>=50">
     The second product is {{ model.getProduct(2)?.name }}
@@ -42,13 +43,72 @@
       the <span [ngStyle]="getStyles(3)">The Product name is {{ model.getProduct(3)?.name }}</span>
     </div>
   </div>
-
+  <br/>
+  <br/>
+  <br/>
   <div class="text-white">
-    <div [ngClass]="getClassesByPosition(0)">
-      The first product is {{ getProductByPosition(0).name }}
+    <div class="bg-info p-2">
+      There are {{ getProductCount() }} products.
     </div>
   </div>
+  <div *ngIf="getProductCount()>4" class="bg-info p-2 mt-1">
+    There are more than 4 products in the model.
+  </div>
+  <ng-template [ngTemplateOutlet]="titleTemplate" [ngTemplateOutletContext]="{Titolo: 'Paolo Paci 2'}"></ng-template>
+  <div *ngIf="getProductByPosition(0).name!='Kayak'" class="bg-info p-2 mt-1">
+    The first product isn't a Kayak.
+  </div>
+  <!--  <div class="bg-info p-2 mt-1" [style.visibility]="(getProduct(100)?.price??1000)>1000?'hidden':'visible'">-->
+  <!--    The first product isn't a Kayak !!!!!!.-->
+  <!--  </div>-->
+  <div class="bg-warning p-2 mt-2" [ngSwitch]="getProductCount()">
+    <span *ngSwitchCase="2">There are 2 products</span>
+    <span *ngSwitchCase="3">There are 3 products</span>
+    <span *ngSwitchCase="4">There are 4 products</span>
+    <span *ngSwitchDefault>There are {{ getProductCount() }} products</span>
+  </div>
+  <br/>
+  <div class="info p-2 mt-2" [ngSwitch]="getProduct(1)">
+    <span *ngSwitchCase="targetName">kayak</span>
+    <span *ngSwitchCase="'Lifejacket'">There are 3 products</span>
+    <span *ngSwitchDefault>Other Product</span>
+  </div>
+  <ng-template [ngTemplateOutlet]="titleTemplate" [ngTemplateOutletContext]="{Titolo: 'Paolo Paci 3'}"></ng-template>
+  <div class="p-1">
+    <table class="table table-sm table-bordered text-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+      </tr>
+      <tr *ngFor="let item of getProducts(); let i=index;let c=count; let dispari=odd;let primo=first;let ultimo=last;
+      trackBy:model.getKey"
+          [class.bg-success]="dispari && !ultimo" [class.text-white]="dispari"
+          [class.bg-warning]="!dispari && !primo" [class.bg-info]="primo || ultimo">
+        <td>{{ i + 1 }} / {{ c }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.category }}</td>
+        <td class="text-md-end" *ngIf="!ultimo">{{ item.price }}€</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="bg-light p-2 text-dark">
+    Product Names:
+    <ng-container *ngFor="let item of getProducts(); let ultimo=last">
+      {{ item.name }}
+      <ng-container *ngIf="!ultimo">,</ng-container>
+    </ng-container>
+  </div>
+<div class="bg-primary m-2">
+  The rounded price is {{getProductPrice(2)}}
+</div>
 
 </div>
+
+<ng-template #titleTemplate let-title="Titolo">
+  <h4 class="p-2 bg-success text-white text-center">{{ title }}</h4>
+</ng-template>
 
 
