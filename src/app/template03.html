@@ -1,6 +1,6 @@
 <div class="container-fluid">
-  <div class="bg-warning mb-3">
-    Selected product: {{ selectedProduct ?? "None" }}
+  <div class="bg-info text-white p2">
+    Selected Product: {{ productValore.value ?? '' }}
   </div>
   <table class="table table-bordered table-sm">
     <thead>
@@ -13,8 +13,9 @@
     </thead>
     <tbody>
     <tr *ngFor="let item of getProducts(); let id=index; let dispari=odd" [class.bg-success]="dispari"
-        [class.bg-secondary]="!dispari" [class.text-white]="!dispari" [class.bg-danger]="getSelected(item)">
-      <td (mouseover)="selectedProduct=item.name">{{ id + 1 }}</td>
+        [class.bg-secondary]="!dispari" [class.text-white]="!dispari"
+        [class.bg-danger]="productValore.value==item.name">
+      <td (mouseover)="productValore.value=item.name??''">{{ id + 1 }}</td>
       <td>{{ item.name }}</td>
       <td>{{ item.category }}</td>
       <td class="text-md-end">{{ item.price }} €</td>
@@ -23,8 +24,7 @@
   </table>
   <div class="form-group">
     <label>Product Name</label>
-<!--    <input class="form-control" (input)="selectedProduct=$any($event).target.value">  -->
-    <input class="form-control" (input)="handleInputEvent($event)">
+    <input #productValore class="form-control" (input)="false">
   </div>
 </div>
 

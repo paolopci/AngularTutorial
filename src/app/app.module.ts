@@ -6,18 +6,19 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {ProductComponent} from "./component";
 import {ProductComponent02} from "./component02";
+import {ProductComponent03} from "./component03";
 import {FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, ProductComponent02
+    AppComponent, ProductComponent, ProductComponent02, ProductComponent03
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, FormsModule
   ],
   providers: [],
-  bootstrap: [ProductComponent02]
+  bootstrap: [ProductComponent03]
 })
 export class AppModule {
 }

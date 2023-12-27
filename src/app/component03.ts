@@ -4,10 +4,10 @@ import {Product} from './product.model'
 
 
 @Component({
-  selector: "app02",
-  templateUrl: './template02.html'
+  selector: "app03",
+  templateUrl: './template03.html'
 })
-export class ProductComponent02 {
+export class ProductComponent03 {
   model: Model = new Model();
   selectedProduct: string | undefined;
 
@@ -16,17 +16,14 @@ export class ProductComponent02 {
     return this.model.getProduct(id);
   }
 
-  getProducts(): Product[] {
-    return this.model.getProducts();
-  }
-
   getSelected(product: Product): boolean {
     return product.name == this.selectedProduct;
   }
 
-  handleInputEvent(ev: Event) {
-    if (ev.target instanceof HTMLInputElement) {
-      this.selectedProduct = ev.target.value;
-    }
+
+  getProducts(): Product[] {
+    return this.model.getProducts();
   }
+
+
 }
