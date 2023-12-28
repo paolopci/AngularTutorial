@@ -5,17 +5,13 @@ import {NgModel, ValidationErrors, NgForm} from "@angular/forms";
 
 
 @Component({
-  selector: "app06",
-  templateUrl: './template06.html'
+  selector: "app1301",
+  templateUrl: './template1301.html'
 })
-export class ProductComponent06 {
+export class ProductComponent1301 {
   model: Model = new Model();
   newProduct: Product = new Product();
   formSubmitted: boolean = false;
-
-  get jsonProduct() {
-    return JSON.stringify(this.newProduct);
-  }
 
   getProduct(id: number): Product | undefined {
 
@@ -26,10 +22,8 @@ export class ProductComponent06 {
     return this.model.getProducts();
   }
 
-  addProduct(product: Product) {
-    console.log('New Product: ' + this.jsonProduct);
-  }
 
+  // ---------- gestione della validazione con msg di errore --------------------
   getMessages(errs: ValidationErrors | null, name: string): string[] {
     let messages: string[] = [];
     for (let errorName in errs) {
@@ -73,4 +67,14 @@ export class ProductComponent06 {
     });
     return messages;
   }
+
+// -------------------- Validazione msg di errori ---------------------------------
+
+// ---------------------  cap 13  -------------------------------
+
+  addProduct(newProduct: Product) {
+    this.model.saveProduct(newProduct);
+  }
+
+
 }
