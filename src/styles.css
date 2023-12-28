@@ -8,3 +8,14 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+
+input.ng-invalid.ng-dirty {
+  border: 2px solid #ff0000
+}
+
+input.ng-valid.ng-dirty{
+  border: 2px solid #6bc502
+}
+

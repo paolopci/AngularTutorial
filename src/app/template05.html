@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="p-2">
+    <div class="bg-info text-white mb-2 p-2">Model Data: {{ jsonProduct }}</div>
+  </div>
+  <form (ngSubmit)="addProduct(newProduct)">
+    <div class="form-group">
+      <label>Name</label>
+      <input class="form-control"
+             name="name"
+             [(ngModel)]="newProduct.name"
+             #name="ngModel"
+             required
+             minlength="5"
+             pattern="^[A-Za-z ]+$"/>
+      <ul class="text-danger list-unstyled mt-1" *ngIf="name.dirty && name.invalid">
+        <li *ngIf="name.errors?.['required']">You must enter a product name</li>
+        <li *ngIf="name.errors?.['pattern']">Product names can only contain letters and spaces</li>
+        <li *ngIf="name.errors?.['minlength']">Product names must be at
+          least {{ name.errors?.['minlength'].requiredLength }} characters
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <input class="form-control"
+             [(ngModel)]="newProduct.category"
+             name="category"
+             #category="ngModel"
+             required
+             minlength="5"
+             pattern="^[A-Za-z ]+$"/>
+      <ul class="text-danger list-unstyled mt-1" *ngIf="category.dirty && category.invalid">
+        <li *ngIf="category.errors?.['required']">You must enter a category name</li>
+        <li *ngIf="category.errors?.['pattern']">Category names can only contain letters and spaces</li>
+        <li *ngIf="category.errors?.['minlength']">Category names must be at
+          least {{ category.errors?.['minlength'].requiredLength }} characters
+        </li>
+      </ul>
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input class="form-control"
+             [(ngModel)]="newProduct.price"
+             name="price"
+             #price="ngModel"
+             required
+             min=1
+             max=1000
+             pattern="^[0-9,.]+$" />
+      <ul class="text-danger list-unstyled mt-1" *ngIf="price.dirty && price.invalid">
+        <li *ngIf="price.errors?.['required']">You must enter a price to product</li>
+        <li *ngIf="price.errors?.['pattern']">Price can only contain numbers 0-9 and point or virgo</li>
+        <li *ngIf="price.errors?.['max']">Price price must be between 1 and 1000 must be at
+          between {{ price.errors?.['min'] }}and {{price.errors?.['maxlength']}}
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary mt-2" type="submit">Create</button>
+  </form>
+</div>
+
+
+
