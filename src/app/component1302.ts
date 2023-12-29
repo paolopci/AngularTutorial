@@ -5,10 +5,10 @@ import {NgModel, ValidationErrors, NgForm} from "@angular/forms";
 
 
 @Component({
-  selector: "app1301",
-  templateUrl: './template1301.html'
+  selector: "app1302",
+  templateUrl: './template1302.html'
 })
-export class ProductComponent1301 {
+export class ProductComponent1302 {
   model: Model = new Model();
   newProduct: Product = new Product();
   formSubmitted: boolean = false;

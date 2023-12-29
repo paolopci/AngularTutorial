@@ -13,7 +13,7 @@ export class SimpleDataSource {
       new Product(6, "Basket Ball", "Basket", 19.50),
       new Product(7, "Corner Flags", "Soccer", 34.95),
       new Product(8, "Thinking Cap", "Chess", 16),
-      new Product(9, undefined, "Chess", 16.98)
+      new Product(9, "Scacchi", "Chess", 16.98)
     )
 
   }

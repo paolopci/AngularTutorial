@@ -1,10 +1,17 @@
-﻿import {Attribute, Directive, ElementRef} from "@angular/core";
+﻿import {Directive, ElementRef, Input} from "@angular/core";
 
 @Directive({
   selector: "[pa-attr]",
 })
 export class PaAttrDirective {
-  constructor(element: ElementRef, @Attribute('pa-attr-class') miaClass: string) {
-    element.nativeElement.classList.add(miaClass || "table-success", "fw-bold");
+
+  constructor(private element: ElementRef) {
+  }
+
+  @Input("pa-attr")
+  bgClass: string | null = "";
+
+  ngOnInit() {
+    this.element.nativeElement.classList.add(this.bgClass || "table-success", "fw-bold");
   }
 }
