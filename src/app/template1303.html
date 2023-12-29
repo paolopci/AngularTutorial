@@ -10,7 +10,7 @@
         </div>
         <div class="form-group">
           <label>Name</label>
-          <input class="form-control"
+          <input class="form-control" appExtend
                  name="name"
                  [(ngModel)]="newProduct.name"
                  #name="ngModel"
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <label>Category</label>
-          <input class="form-control"
+          <input class="form-control" appExtend
                  [(ngModel)]="newProduct.category"
                  name="category"
                  #category="ngModel"
@@ -58,6 +58,12 @@
 
 
     <div class="col">
+      <div class="form-group bg-info text-white p-2">
+        <label>Name:</label>
+        <input class="bg-primary text-white form-control"
+               [(paModel)]="newProduct.name" #paModel="paModel">
+      </div>
+      <div class="bg-info text-white p-1">Direction: {{ paModel.direction }}</div>
       <table class="table table-sm table-bordered table-striped mt-4">
         <thead>
         <tr [ngStyle]="{'background-color':'yellow'}">
