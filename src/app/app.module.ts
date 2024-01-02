@@ -15,25 +15,29 @@ import {ProductComponent1302} from "./component1302";
 import {ProductComponent1303} from "./component1303";
 import {ProductComponent1401} from "./component1401";
 import {ProductComponent1402} from "./component1402";
+import {ProductComponent1403} from "./component1403";
 import {FormsModule} from '@angular/forms'
 import {PaAttrDirective} from './attr.directive' // directive!!!!
 import {PaModel} from './twoway.directive' // directive!!!!
 import {ExtendDirective} from './extend.directive' // directive!!!!
 import {PaStructureDirective} from './structure.directive' // directive!!!!
 import {PaIteratorDirective} from './iterator.directive' // directive!!!!
+import {PaCellColor} from './cellColor.directive' // directive!!!!
+import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!!!
 
 @NgModule({
   declarations: [
     AppComponent, ProductComponent, ProductComponent02, ProductComponent03, ProductComponent04, ProductComponent1401,
-    ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302,
-    ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402,PaIteratorDirective
+    ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
+    ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
+    PaCellColorSwitcher
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, FormsModule
   ],
   providers: [],
-  bootstrap: [ProductComponent1402]
+  bootstrap: [ProductComponent1403]
 })
 export class AppModule {
 }
