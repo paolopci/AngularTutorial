@@ -5,10 +5,10 @@ import {NgModel, ValidationErrors, NgForm} from "@angular/forms";
 
 
 @Component({
-  selector: "app1401",
-  templateUrl: './template1401.html'
+  selector: "app1402",
+  templateUrl: './template1402.html'
 })
-export class ProductComponent1401  {
+export class ProductComponent1402 {
   model: Model = new Model();
   newProduct: Product = new Product();
   formSubmitted: boolean = false;
@@ -24,6 +24,10 @@ export class ProductComponent1401  {
 
   getProducts(): Product[] {
     return this.model.getProducts();
+  }
+
+  deleteProduct(key: number) {
+    this.model.deleteProduct(key);
   }
 
 
@@ -54,14 +58,8 @@ export class ProductComponent1401  {
     return this.getMessages(state.errors, thing);
   }
 
-  submitForm(form: NgForm) {
-    this.formSubmitted = true;
-    if (form.valid) {
-      this.addProduct(this.newProduct);
-      this.newProduct = new Product();
-      form.resetForm();
-      this.formSubmitted = false;
-    }
+  submitForm() {
+    this.addProduct(this.newProduct);
   }
 
   getFormValidationMessages(form: NgForm): string[] {
