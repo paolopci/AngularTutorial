@@ -1,6 +1,7 @@
-﻿import {Component, Input} from "@angular/core";
+﻿import {Component, Input, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {Model} from "./repository.model";
 import {Product} from "./product.model";
+import {PaCellColor} from "./cellColor.directive";
 
 @Component({
   selector: "paProductTable",
@@ -23,7 +24,26 @@ export class ProductTableComponent {
     return this.dataModel?.getProducts();
   }
 
-  deleteProduct(key: number=0) {
+  deleteProduct(key: number = 0) {
     this.dataModel?.deleteProduct(key);
+  }
+
+// ---------------------------------------------------------------------------------------------------
+  @ViewChildren(PaCellColor)
+  viewChildren: QueryList<PaCellColor> | undefined;
+
+  ngAfterViewInit() {
+    this.viewChildren?.changes.subscribe(() => {
+      this.updateViewChildren();
+    })
+    this.updateViewChildren();
+  }
+
+  private updateViewChildren() {
+    setTimeout(() => {
+      this.viewChildren?.forEach((child, index) => {
+        child.setColor(index % 2 ? true : false);
+      })
+    }, 0);
   }
 }
