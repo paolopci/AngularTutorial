@@ -2,7 +2,7 @@
 
 
 @Directive({
-  selector: "td"
+  selector: "td[paApplyColor]"
 })
 export class PaCellColor {
 
