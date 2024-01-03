@@ -71,13 +71,10 @@ export class ProductComponent1501 {
     return messages;
   }
 
-// -------------------- Validazione msg di errori ---------------------------------
-
-// ---------------------  cap 13  -------------------------------
-
   addProduct(newProduct: Product) {
     this.model.saveProduct(newProduct);
   }
 
 
+  protected readonly addEventListener = addEventListener;
 }
