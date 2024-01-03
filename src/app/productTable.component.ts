@@ -9,7 +9,7 @@ import {Product} from "./product.model";
 export class ProductTableComponent {
 
   taxRate: number = 0;
-  categoryFilter: string | undefined;
+  categoryFilter: string = '-- Select category --';
   itemCount: number = 0;
 
 
@@ -29,5 +29,4 @@ export class ProductTableComponent {
   deleteProduct(key: number = 0) {
     this.dataModel?.deleteProduct(key);
   }
-
 }

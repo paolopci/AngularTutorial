@@ -29,6 +29,8 @@ import {PaStructureDirective} from './structure.directive' // directive!!!!
 import {PaIteratorDirective} from './iterator.directive' // directive!!!!
 import {PaCellColor} from './cellColor.directive' // directive!!!!
 import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!!!
+import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
+import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!
     ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
-    ProductComponent1601
+    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe
   ],
   imports: [
     BrowserModule,
