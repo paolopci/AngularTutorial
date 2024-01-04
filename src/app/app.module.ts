@@ -19,6 +19,7 @@ import {ProductComponent1403} from "./component1403";
 import {ProductComponent1501} from "./component1501";
 import {ProductComponent1601} from "./component1601";
 import {ProductTableComponent} from "./productTable.component";
+import {ProductTableComponent1602} from "./productTable.component1602";
 import {ProductFormComponent} from "./productForm.component";
 import {PaToggleView} from "./toggleView.component";
 import {FormsModule} from '@angular/forms'
@@ -32,19 +33,26 @@ import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
 import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
 
+// imposto il formato locale IT per i numeri
+import {LOCALE_ID} from "@angular/core";
+import localIt from '@angular/common/locales/it'
+import {registerLocaleData} from "@angular/common";
+
+registerLocaleData(localIt);
+
 @NgModule({
   declarations: [
     AppComponent, ProductComponent, ProductComponent02, ProductComponent03, ProductComponent04, ProductComponent1401,
     ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
-    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe
+    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, FormsModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
   bootstrap: [ProductComponent1601]
 })
 export class AppModule {

@@ -3,7 +3,7 @@ import {Product} from "../product.model";
 
 @Pipe({
   name: 'filter',
-  pure: true
+  pure: false
 })
 export class PaCategoryFilterPipe {
 
