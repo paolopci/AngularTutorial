@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
+import {FormsModule} from '@angular/forms'
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -27,7 +27,7 @@ import {ProductTableComponent1605} from "./productTable.component1605";
 import {ProductTableComponent1701} from "./productTable.component1701";
 import {ProductFormComponent} from "./productForm.component";
 import {PaToggleView} from "./toggleView.component";
-import {FormsModule} from '@angular/forms'
+
 import {PaAttrDirective} from './attr.directive' // directive!!!!
 import {PaModel} from './twoway.directive' // directive!!!!
 import {ExtendDirective} from './extend.directive' // directive!!!!
@@ -38,24 +38,26 @@ import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
 import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
 
+// add nuovo module della cartella services
+import {ServiceModule} from "./services/service.module";
+// -------------------------------------------------------------
 // imposto il formato locale IT per i numeri
 import {LOCALE_ID} from "@angular/core";
 import localIt from '@angular/common/locales/it'
 import {registerLocaleData} from "@angular/common";
-
 registerLocaleData(localIt);
-
+// -------------------------------------------------------------
 @NgModule({
   declarations: [
     AppComponent, ProductComponent, ProductComponent02, ProductComponent03, ProductComponent04, ProductComponent1401,
     ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
-    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602,ProductTableComponent1603,ProductTableComponent1604
-    ,ProductTableComponent1605,ProductTableComponent1701,ProductComponent1701
+    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602, ProductTableComponent1603, ProductTableComponent1604
+    , ProductTableComponent1605, ProductTableComponent1701, ProductComponent1701
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, ServiceModule,
     BrowserAnimationsModule, FormsModule
   ],
   // providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
