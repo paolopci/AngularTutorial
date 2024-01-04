@@ -21,6 +21,8 @@ import {ProductComponent1601} from "./component1601";
 import {ProductTableComponent} from "./productTable.component";
 import {ProductTableComponent1602} from "./productTable.component1602";
 import {ProductTableComponent1603} from "./productTable.component1603";
+import {ProductTableComponent1604} from "./productTable.component1604";
+import {ProductTableComponent1605} from "./productTable.component1605";
 import {ProductFormComponent} from "./productForm.component";
 import {PaToggleView} from "./toggleView.component";
 import {FormsModule} from '@angular/forms'
@@ -47,7 +49,8 @@ registerLocaleData(localIt);
     ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
-    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602,ProductTableComponent1603
+    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602,ProductTableComponent1603,ProductTableComponent1604
+    ,ProductTableComponent1605
   ],
   imports: [
     BrowserModule,
