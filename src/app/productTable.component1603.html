@@ -53,8 +53,8 @@
       [class.table-info]="odd"
       [class.table-warning]="even">
     <td>{{ i + 1 }}</td>
-    <td>{{ item.name }}</td>
-    <td>{{ item.category }}</td>
+    <td>{{ item.name | uppercase |titlecase }}</td>
+    <td>{{ item.category | lowercase }}</td>
     <td>{{ item.price | number:"3.2-3":"it-IT" }}</td>
     <!--    <td class="text-md-end fw-bold">{{ item.price | currency:"EUR":'symbol':'2.2-2'}}</td>-->
     <td>{{ item.price | addTax:(taxRate || 0) | currency:'EUR':'symbol':'2.2-2' }}</td>
