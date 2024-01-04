@@ -1,16 +1,28 @@
 ﻿import {Component, Input, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {Model} from "./repository.model";
 import {Product} from "./product.model";
+import {Subject} from "rxjs";
 
 @Component({
-  selector: "paProductTable",
-  templateUrl: './productTable.component.html'
+  selector: "paProductTable1605",
+  templateUrl: './productTable.component1605.html'
 })
-export class ProductTableComponent {
+export class ProductTableComponent1605 {
 
   taxRate: number = 0;
   categoryFilter: string = '-- Select category --';
   itemCount: number = 0;
+  dateObject: Date = new Date(2020, 1, 20);
+  dateString: string = "2020-02-20T00:00:00.000Z";
+  dateNumber: number = 1582156800000;
+  numbers: Subject<number> = new Subject<number>();
+
+  selectMap = {
+    "Watersports": "stay dry",
+    "Soccer": "score goals",
+    "Basket": "Great @@@ multi points @@@",
+    "other": "have fun"
+  }
 
 
 // questo è il component child.
@@ -28,5 +40,12 @@ export class ProductTableComponent {
 
   deleteProduct(key: number = 0) {
     this.dataModel?.deleteProduct(key);
+  }
+
+  ngOnInit() {
+    let counter = 100;
+    setInterval(() => {
+      this.numbers.next(counter += 10)
+    }, 1000);
   }
 }

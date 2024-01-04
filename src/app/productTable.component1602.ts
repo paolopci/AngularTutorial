@@ -3,10 +3,10 @@ import {Model} from "./repository.model";
 import {Product} from "./product.model";
 
 @Component({
-  selector: "paProductTable",
-  templateUrl: './productTable.component.html'
+  selector: "paProductTable1602",
+  templateUrl: './productTable.component1602.html'
 })
-export class ProductTableComponent {
+export class ProductTableComponent1602 {
 
   taxRate: number = 0;
   categoryFilter: string = '-- Select category --';
