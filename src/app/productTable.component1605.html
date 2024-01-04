@@ -9,16 +9,16 @@
   <div>Date formatted from string: {{ dateString | date }}</div>
   <div>Date formatted from number: {{ dateNumber | date }}</div>
 </div>
-<div class="my-2">
-  <label>Tax Rate:</label>
-  <select class="form-select" [value]="taxRate || 0" (change)="taxRate=$any($event).target.value">
-    <option value="0">None</option>
-    <option value="10">{{ 0.1 |percent }}</option>
-    <option value="20">{{ 0.2 |percent }}</option>
-    <option value="50">{{ 0.5 |percent }}</option>
-    <option value="150">{{ 1.5|percent }}</option>
-  </select>
-</div>
+<!--<div class="my-2">-->
+<!--  <label>Tax Rate:</label>-->
+<!--  <select class="form-select" [value]="taxRate || 0" (change)="taxRate=$any($event).target.value">-->
+<!--    <option value="0">None</option>-->
+<!--    <option value="10">{{ 0.1 |percent }}</option>-->
+<!--    <option value="20">{{ 0.2 |percent }}</option>-->
+<!--    <option value="50">{{ 0.5 |percent }}</option>-->
+<!--    <option value="150">{{ 1.5|percent }}</option>-->
+<!--  </select>-->
+<!--</div>-->
 <div class="bg-info p-2 text-white">
   <div>
     Date formatted from object: {{ dateObject | date:"shortDate":"UTC":"it-IT" }}
@@ -30,14 +30,14 @@
     Date formatted from number: {{ dateNumber | date:"longDate":"UTC":"it-IT" }}
   </div>
 </div>
-<div class="form-group my-2">
-  <label>Number of items:</label>
-  <select class="form-select" [value]="itemCount ?? 1" (change)="itemCount=$any($event).target.value">
-    <option *ngFor="let item of getProducts(); let i=index" [value]="i+1" [selected]="(i+1)===itemCount">
-      {{ i + 1 }}
-    </option>
-  </select>
-</div>
+<!--<div class="form-group my-2">-->
+<!--  <label>Number of items:</label>-->
+<!--  <select class="form-select" [value]="itemCount ?? 1" (change)="itemCount=$any($event).target.value">-->
+<!--    <option *ngFor="let item of getProducts(); let i=index" [value]="i+1" [selected]="(i+1)===itemCount">-->
+<!--      {{ i + 1 }}-->
+<!--    </option>-->
+<!--  </select>-->
+<!--</div>-->
 <!--<div class="my-2">-->
 <!--  <label>Category Filter:</label>-->
 <!--  <select class="form-select" [(ngModel)]="categoryFilter" >-->
@@ -83,3 +83,6 @@
   <!--  </tr>-->
   </tbody>
 </table>
+<div class="bg-info text-white p-2">
+  <div>Counter: {{ numbers|async }}</div>
+</div>

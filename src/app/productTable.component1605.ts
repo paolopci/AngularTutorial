@@ -1,6 +1,7 @@
 ﻿import {Component, Input, QueryList, ViewChild, ViewChildren} from "@angular/core";
 import {Model} from "./repository.model";
 import {Product} from "./product.model";
+import {Subject} from "rxjs";
 
 @Component({
   selector: "paProductTable1605",
@@ -14,6 +15,7 @@ export class ProductTableComponent1605 {
   dateObject: Date = new Date(2020, 1, 20);
   dateString: string = "2020-02-20T00:00:00.000Z";
   dateNumber: number = 1582156800000;
+  numbers: Subject<number> = new Subject<number>();
 
   selectMap = {
     "Watersports": "stay dry",
@@ -38,5 +40,12 @@ export class ProductTableComponent1605 {
 
   deleteProduct(key: number = 0) {
     this.dataModel?.deleteProduct(key);
+  }
+
+  ngOnInit() {
+    let counter = 100;
+    setInterval(() => {
+      this.numbers.next(counter += 10)
+    }, 1000);
   }
 }
