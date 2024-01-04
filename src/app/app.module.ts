@@ -20,6 +20,7 @@ import {ProductComponent1501} from "./component1501";
 import {ProductComponent1601} from "./component1601";
 import {ProductTableComponent} from "./productTable.component";
 import {ProductTableComponent1602} from "./productTable.component1602";
+import {ProductTableComponent1603} from "./productTable.component1603";
 import {ProductFormComponent} from "./productForm.component";
 import {PaToggleView} from "./toggleView.component";
 import {FormsModule} from '@angular/forms'
@@ -46,13 +47,13 @@ registerLocaleData(localIt);
     ProductComponent05, ProductComponent06, ProductComponent1301, PaAttrDirective, ProductComponent1302, ProductComponent1403,
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
-    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602
+    ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602,ProductTableComponent1603
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule, FormsModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
+  // providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
   bootstrap: [ProductComponent1601]
 })
 export class AppModule {
