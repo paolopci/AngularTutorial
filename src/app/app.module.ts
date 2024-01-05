@@ -5,13 +5,12 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
-
-import {ProductComponent1701} from "./component1701";
-import {ProductTableComponent1701} from "./productTable.component1701";
-import {ProductFormComponent} from "./productForm.component";
-import {PaToggleView} from "./toggleView.component";
-import {PaDiscountEditorComponent} from './services/discountEditor.component'
-import {PaDiscountDisplayComponent} from "./services/discountDisplay.component";
+import {ProductComponent1701} from "./component1701";  // component
+import {ProductTableComponent1701} from "./productTable.component1701"; // component
+import {ProductFormComponent} from "./productForm.component"; // component
+import {PaToggleView} from "./toggleView.component"; // component
+import {PaDiscountEditorComponent} from './services/discountEditor.component' // component
+import {PaDiscountDisplayComponent} from "./services/discountDisplay.component"; // component
 
 
 import {PaAttrDirective} from './attr.directive' // directive!!!!
@@ -24,8 +23,8 @@ import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!
 import {PaDiscountAmountDirective} from './directives/discountAmount.directive' // directive!!!!
 
 
-import {Model} from './repository.model'
-
+import {Model} from './repository.model' // come servizio service
+import {SimpleDataSource} from './datasource.mode' // come servizio service
 
 
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
@@ -46,7 +45,7 @@ registerLocaleData(localIt);
 // -------------------------------------------------------------
 @NgModule({
   declarations: [
-    AppComponent,  PaAttrDirective, PaModel, ExtendDirective, PaStructureDirective, PaIteratorDirective, PaCellColor,
+    AppComponent, PaAttrDirective, PaModel, ExtendDirective, PaStructureDirective, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1701,
     ProductComponent1701, PaDiscountEditorComponent, PaDiscountDisplayComponent,
     PaDiscountPipe, PaDiscountAmountDirective
@@ -55,7 +54,7 @@ registerLocaleData(localIt);
     BrowserModule, ServiceModule,
     BrowserAnimationsModule, FormsModule
   ],
-  providers: [DiscountService,Model,{provide: LOCALE_ID, useValue: 'it-IT'}],
+  providers: [DiscountService, Model, SimpleDataSource, {provide: LOCALE_ID, useValue: 'it-IT'}],
   bootstrap: [ProductComponent1701]
 })
 export class AppModule {
