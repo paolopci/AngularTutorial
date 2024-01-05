@@ -13,7 +13,9 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     FormsModule
   ],
-  providers: [DiscountService, LogService],  // qui metto i services!!!!!
+  providers: [DiscountService,
+   // {provide: LogService, useClass: LogService}],  // qui metto i services!!!!!
+    {provide: 'logger', useClass: LogService}],  // qui metto i services!!!!!
   exports: [],
   bootstrap: []
 })
