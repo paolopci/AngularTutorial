@@ -1,13 +1,17 @@
 import {Product} from "./product.model";
 import {SimpleDataSource} from "./datasource.mode";
+import {Injectable} from "@angular/core";
+
+
+@Injectable()
 
 export class Model {
-  private dataSource: SimpleDataSource;
+ // private dataSource: SimpleDataSource;
   private products: Product[];
   private locator = (p: Product, id: number | any) => p.id == id;
 
 
-  constructor() {
+  constructor(private dataSource: SimpleDataSource) {
     this.dataSource = new SimpleDataSource();
     this.products = new Array<Product>();
     this.dataSource.getData().forEach(p => this.products.push(p));

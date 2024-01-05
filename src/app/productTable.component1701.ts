@@ -1,21 +1,21 @@
-﻿import {Component, Input, QueryList, ViewChild, ViewChildren} from "@angular/core";
+﻿import {Component, Input} from "@angular/core";
 import {Model} from "./repository.model";
 import {Product} from "./product.model";
 
+
 @Component({
-  selector: "paProductTable1602",
-  templateUrl: './productTable.component1602.html'
+  selector: "paProductTable1701",
+  templateUrl: './productTable.component1701.html'
 })
-export class ProductTableComponent1602 {
+export class ProductTableComponent1701 {
 
-  taxRate: number = 0;
-  categoryFilter: string = '-- Select category --';
-  itemCount: number = 0;
 
+  constructor(private dataModel: Model) {
+  }
 
 // questo è il component child.
-  @Input('model')
-  dataModel: Model | undefined;
+//   @Input('model')
+//   dataModel: Model | undefined;
 
 
   getProduct(key: number): Product | undefined {
