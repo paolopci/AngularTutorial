@@ -18,7 +18,8 @@ import {FormsModule} from "@angular/forms";
     // {provide: LogService, useClass: LogService}],  // qui metto i services!!!!!
     // {provide: 'logger', useClass: LogService},
     // {provide: LOG_SERVICE, useClass: LogService}
-    {provide: LOG_SERVICE, useClass: SpecialLogService}
+    {provide: LOG_SERVICE, useClass: LogService, multi: true},
+    {provide: LOG_SERVICE, useClass: SpecialLogService, multi: true},
   ],  // qui metto i services!!!!!
   exports: [],
   bootstrap: []
