@@ -3,7 +3,6 @@ import {Model} from "./repository.model";
 import {Product} from "./product.model";
 
 
-
 @Component({
   selector: "paProductTable1701",
   templateUrl: './productTable.component1701.html'
@@ -11,9 +10,12 @@ import {Product} from "./product.model";
 export class ProductTableComponent1701 {
 
 
+  constructor(private dataModel: Model) {
+  }
+
 // questo è il component child.
-  @Input('model')
-  dataModel: Model | undefined;
+//   @Input('model')
+//   dataModel: Model | undefined;
 
 
   getProduct(key: number): Product | undefined {
