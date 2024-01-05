@@ -7,9 +7,10 @@ import {Product} from './product.model'
   templateUrl: './template1701.html'
 })
 export class ProductComponent1701 {
-  model: Model = new Model();
+  
 
-
+constructor(public model:Model) {
+}
   addProduct(newProduct: Product) {
     this.model.saveProduct(newProduct);
   }

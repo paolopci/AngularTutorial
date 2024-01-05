@@ -4,7 +4,7 @@ import {FormsModule} from '@angular/forms'
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import {ProductComponent} from "./component";
+
 
 import {ProductComponent1701} from "./component1701";
 import {ProductTableComponent1701} from "./productTable.component1701";
@@ -24,6 +24,10 @@ import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!
 import {PaDiscountAmountDirective} from './directives/discountAmount.directive' // directive!!!!
 
 
+import {Model} from './repository.model'
+
+
+
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
 import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
 import {PaDiscountPipe} from './pipe/discount.pipe' // pipe!!!!
@@ -35,13 +39,14 @@ import {ServiceModule} from "./services/service.module";
 import {LOCALE_ID} from "@angular/core";
 import localIt from '@angular/common/locales/it'
 import {registerLocaleData} from "@angular/common";
+import {DiscountService} from "./services/discount.service";
 
 registerLocaleData(localIt);
 
 // -------------------------------------------------------------
 @NgModule({
   declarations: [
-    AppComponent, ProductComponent, PaAttrDirective, PaModel, ExtendDirective, PaStructureDirective, PaIteratorDirective, PaCellColor,
+    AppComponent,  PaAttrDirective, PaModel, ExtendDirective, PaStructureDirective, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductFormComponent, PaToggleView, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1701,
     ProductComponent1701, PaDiscountEditorComponent, PaDiscountDisplayComponent,
     PaDiscountPipe, PaDiscountAmountDirective
@@ -50,7 +55,7 @@ registerLocaleData(localIt);
     BrowserModule, ServiceModule,
     BrowserAnimationsModule, FormsModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
+  providers: [DiscountService,Model,{provide: LOCALE_ID, useValue: 'it-IT'}],
   bootstrap: [ProductComponent1701]
 })
 export class AppModule {
