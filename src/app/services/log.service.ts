@@ -30,6 +30,8 @@ export class LogService {
   logMessage(level: LogLevel, message: string) {
     if (level >= this.minumumLevel) {
       console.log(`Message (${LogLevel[level]}): ${message}`);
+    }else {
+      console.log(`No Log in console.`)
     }
   }
 }
