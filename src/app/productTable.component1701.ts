@@ -3,12 +3,12 @@ import {Model} from "./repository.model";
 import {Product} from "./product.model";
 
 
+
 @Component({
   selector: "paProductTable1701",
   templateUrl: './productTable.component1701.html'
 })
 export class ProductTableComponent1701 {
-
 
 
 // questo è il component child.

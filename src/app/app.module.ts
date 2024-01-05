@@ -27,6 +27,9 @@ import {ProductTableComponent1605} from "./productTable.component1605";
 import {ProductTableComponent1701} from "./productTable.component1701";
 import {ProductFormComponent} from "./productForm.component";
 import {PaToggleView} from "./toggleView.component";
+import {PaDiscountEditorComponent} from './services/discountEditor.component'
+import {PaDiscountDisplayComponent} from "./services/discountDisplay.component";
+
 
 import {PaAttrDirective} from './attr.directive' // directive!!!!
 import {PaModel} from './twoway.directive' // directive!!!!
@@ -35,8 +38,10 @@ import {PaStructureDirective} from './structure.directive' // directive!!!!
 import {PaIteratorDirective} from './iterator.directive' // directive!!!!
 import {PaCellColor} from './cellColor.directive' // directive!!!!
 import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!!!
+
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
 import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
+import {PaDiscountPipe} from './pipe/discount.pipe' // pipe!!!!
 
 // add nuovo module della cartella services
 import {ServiceModule} from "./services/service.module";
@@ -45,7 +50,9 @@ import {ServiceModule} from "./services/service.module";
 import {LOCALE_ID} from "@angular/core";
 import localIt from '@angular/common/locales/it'
 import {registerLocaleData} from "@angular/common";
+
 registerLocaleData(localIt);
+
 // -------------------------------------------------------------
 @NgModule({
   declarations: [
@@ -54,13 +61,14 @@ registerLocaleData(localIt);
     ProductComponent1303, PaModel, ExtendDirective, PaStructureDirective, ProductComponent1402, PaIteratorDirective, PaCellColor,
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
     ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602, ProductTableComponent1603, ProductTableComponent1604
-    , ProductTableComponent1605, ProductTableComponent1701, ProductComponent1701
+    , ProductTableComponent1605, ProductTableComponent1701, ProductComponent1701, PaDiscountEditorComponent, PaDiscountDisplayComponent,
+    PaDiscountPipe
   ],
   imports: [
     BrowserModule, ServiceModule,
     BrowserAnimationsModule, FormsModule
   ],
-  // providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
+  providers: [{provide: LOCALE_ID, useValue: 'it-IT'}],
   bootstrap: [ProductComponent1701]
 })
 export class AppModule {

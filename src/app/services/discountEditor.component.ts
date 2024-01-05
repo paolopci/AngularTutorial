@@ -1,4 +1,4 @@
-﻿import {Component, Input} from "@angular/core";
+﻿import {Component} from "@angular/core";
 import {DiscountService} from "./discount.service";
 
 
@@ -11,5 +11,5 @@ export class PaDiscountEditorComponent {
   // @Input('discounter')
   // discounter?: DiscountService
 
-  constructor(public discounter: DiscountService) { }
+  constructor(public discounter: DiscountService) {}
 }
