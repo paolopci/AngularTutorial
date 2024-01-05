@@ -38,6 +38,8 @@ import {PaStructureDirective} from './structure.directive' // directive!!!!
 import {PaIteratorDirective} from './iterator.directive' // directive!!!!
 import {PaCellColor} from './cellColor.directive' // directive!!!!
 import {PaCellColorSwitcher} from './cellColorSwitcher.directive' // directive!!!!
+import {PaDiscountAmountDirective} from './directives/discountAmount.directive' // directive!!!!
+
 
 import {PaAddTaxPipe} from './pipe/addTax.pipe' // pipe!!!!
 import {PaCategoryFilterPipe} from './pipe/categoryFilter.pipe' // pipe!!!!
@@ -62,7 +64,7 @@ registerLocaleData(localIt);
     PaCellColorSwitcher, ProductComponent1501, ProductComponent1501, ProductTableComponent, ProductFormComponent, PaToggleView,
     ProductComponent1601, PaAddTaxPipe, PaCategoryFilterPipe, ProductTableComponent1602, ProductTableComponent1603, ProductTableComponent1604
     , ProductTableComponent1605, ProductTableComponent1701, ProductComponent1701, PaDiscountEditorComponent, PaDiscountDisplayComponent,
-    PaDiscountPipe
+    PaDiscountPipe, PaDiscountAmountDirective
   ],
   imports: [
     BrowserModule, ServiceModule,
