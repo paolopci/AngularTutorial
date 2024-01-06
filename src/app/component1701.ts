@@ -7,12 +7,4 @@ import {Component} from "@angular/core";
   templateUrl: './template1701.html'
 })
 export class ProductComponent1701 {
-
-
-  // constructor(public model: Model) {
-  // }
-
-  // addProduct(newProduct: Product) {
-  //   this.model.saveProduct(newProduct);
-  // }
 }
