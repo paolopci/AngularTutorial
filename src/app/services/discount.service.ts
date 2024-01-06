@@ -9,19 +9,19 @@ export class DiscountService {
 
 
   private discountValue: number = 10;
-  private logger?: LogService
+  
 
 
   // constructor(private logger: LogService) {
   // }
   //  constructor(@Inject('logger') private logger: LogService) {
   //  }
-  // constructor(@Inject(LOG_SERVICE) private logger: LogService) {
-  // }
+   constructor(@Inject(LOG_SERVICE) private logger: LogService) {
+   }
 
-  constructor(@Inject(LOG_SERVICE) loggers: LogService[]) {
-    this.logger = loggers.find(l => l.minumumLevel == LogLevel.DEBUG);
-  }
+  // constructor(@Inject(LOG_SERVICE) loggers: LogService[]) {
+  //   this.logger = loggers.find(l => l.minumumLevel == LogLevel.DEBUG);
+  // }
 
   public get discount(): number {
     return this.discountValue;
